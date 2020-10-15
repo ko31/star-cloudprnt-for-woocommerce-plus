@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Star CloudPRNT for WooCommerce Plus 0.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/star-cloudprnt-"
 "for-woocommerce-plus\n"
-"POT-Creation-Date: 2020-10-15 03:06:38+00:00\n"
-"PO-Revision-Date: 2020-10-15 12:07+0900\n"
+"POT-Creation-Date: 2020-10-15 03:17:59+00:00\n"
+"PO-Revision-Date: 2020-10-15 12:18+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -154,6 +154,10 @@ msgstr " 数量: "
 msgid " x Cost: "
 msgstr " x 価格: "
 
+#: order-handler.php:166
+msgid "Billing Address:"
+msgstr "請求先住所:"
+
 #: order-handler.php:178
 msgid "Shipping Address:"
 msgstr "配送先住所:"
@@ -213,6 +217,10 @@ msgstr "価格はすべて税込価格です（該当する場合）。"
 #: order-handler.php:258
 msgid "Customer Provided Notes:"
 msgstr "お客様からのメモ:"
+
+#: order-handler.php:260
+msgid "None"
+msgstr "なし"
 
 #. Plugin Name of the plugin/theme
 msgid "Star CloudPRNT for WooCommerce Plus"

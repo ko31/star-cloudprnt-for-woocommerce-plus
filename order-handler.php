@@ -163,7 +163,7 @@
 		$printer->set_text_emphasized();
 		if ($a1 == '')
 		{
-			$printer->add_text_line("Billing Address:");
+			$printer->add_text_line(__( 'Billing Address:', 'star-cloudprnt-for-woocommerce-plus' ));
 			$printer->cancel_text_emphasized();
 			$fname = $order_meta['_billing_first_name'][0];
 			$lname = $order_meta['_billing_last_name'][0];
@@ -257,7 +257,7 @@
 		$printer->set_text_emphasized();
 		$printer->add_text_line(__( 'Customer Provided Notes:', 'star-cloudprnt-for-woocommerce-plus' ));
 		$printer->cancel_text_emphasized();
-		$printer->add_text_line(empty($order->post->post_excerpt) ? "None" : $order->post->post_excerpt);
+		$printer->add_text_line(empty($order->post->post_excerpt) ? __( 'None', 'star-cloudprnt-for-woocommerce-plus' ) : $order->post->post_excerpt);
 		if (get_option('star-cloudprnt-print-logo-bottom-input')) $printer->add_nv_logo(esc_attr(get_option('star-cloudprnt-print-logo-bottom-input')));
 
 		$printer->printjob();
