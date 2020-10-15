@@ -238,7 +238,8 @@
 
 		$printer->add_new_line(1);
 		$printer->set_text_right_align();
-		$formatted_overall_total_price = number_format($order_meta['_order_total'][0], 2, '.', '');
+		$number_format_decimals = apply_filters( 'scfwp_print_order_summary_number_format_decimals', 2 );
+		$formatted_overall_total_price = number_format($order_meta['_order_total'][0], $number_format_decimals, '.', '');
 		$printer->add_text_line(__( 'TOTAL     ', 'star-cloudprnt-for-woocommerce-plus' ).star_cloudprnt_get_codepage_currency_symbol().$formatted_overall_total_price);
 		$printer->set_text_left_align();
 		$printer->add_new_line(1);
