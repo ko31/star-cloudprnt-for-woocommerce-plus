@@ -122,8 +122,11 @@
 							+floatval($order->get_item_meta($item_id, "_line_tax", true));
 			$item_price = floatval($item_total_price) / intval($item_qty);
 			$currencyHex = star_cloudprnt_get_codepage_currency_symbol();
-			$formatted_item_price = number_format($item_price, 2, '.', '');
-			$formatted_total_price = number_format($item_total_price, 2, '.', '');
+			$number_format_decimals = apply_filters( 'scfwp_print_order_summary_number_format_decimals', 2 );
+			$number_format_dec_point = apply_filters( 'scfwp_print_order_summary_number_format_dec_point', '.' );
+			$number_format_thousands_sep = apply_filters( 'scfwp_print_order_summary_number_format_thousands_sep', '' );
+			$formatted_item_price = number_format($item_price, $number_format_decimals, $number_format_dec_point , $number_format_thousands_sep);
+			$formatted_total_price = number_format($item_total_price, $number_format_decimals, $number_format_dec_point, $number_format_thousands_sep);
 
 			$printer->set_text_emphasized();
 			$printer->add_text_line(str_replace('&ndash;', '-', $product_name).__( ' - ID: ', 'star-cloudprnt-for-woocommerce-plus' ).$product_id."");
@@ -239,7 +242,9 @@
 		$printer->add_new_line(1);
 		$printer->set_text_right_align();
 		$number_format_decimals = apply_filters( 'scfwp_print_order_summary_number_format_decimals', 2 );
-		$formatted_overall_total_price = number_format($order_meta['_order_total'][0], $number_format_decimals, '.', '');
+		$number_format_dec_point = apply_filters( 'scfwp_print_order_summary_number_format_dec_point', '.' );
+		$number_format_thousands_sep = apply_filters( 'scfwp_print_order_summary_number_format_thousands_sep', '' );
+		$formatted_overall_total_price = number_format($order_meta['_order_total'][0], $number_format_decimals, $number_format_dec_point, $number_format_thousands_sep);
 		$printer->add_text_line(__( 'TOTAL     ', 'star-cloudprnt-for-woocommerce-plus' ).star_cloudprnt_get_codepage_currency_symbol().$formatted_overall_total_price);
 		$printer->set_text_left_align();
 		$printer->add_new_line(1);
