@@ -160,11 +160,7 @@
 			 */
 			$item_appendix = apply_filters( 'scfwp_print_order_summary_item_appendix', '', $order, $item_id, $item_data );
 			if ($item_appendix){
-				$exploded = explode("\n", $item_appendix);
-				foreach($exploded as $appendix)
-				{
-					$printer->add_text_line($appendix);
-				}
+				star_cloudprnt_add_text_line($item_appendix, $printer);
 			}
 		}
 	}
@@ -204,11 +200,7 @@
 		 */
 		$overwrite_address = apply_filters( 'scfwp_print_order_summary_overwrite_address', '', $order, $order_meta );
 		if ($overwrite_address){
-			$exploded = explode("\n", $overwrite_address);
-			foreach($exploded as $address)
-			{
-				$printer->add_text_line($address);
-			}
+			star_cloudprnt_add_text_line($overwrite_address, $printer);
 		} else {
 			$printer->add_text_line($fname." ".$lname);
 			$printer->add_text_line($a1);
@@ -254,6 +246,16 @@
 		$printer->cancel_text_emphasized();
 		$printer->set_font_magnification(1, 1);
 		$printer->add_new_line(1);
+
+		/**
+		 * Filters after title.
+		 */
+		$after_title = apply_filters( 'scfwp_print_order_summary_after_title', '', $order_id, $order);
+		if ($after_title){
+			star_cloudprnt_add_text_line($after_title, $printer);
+			$printer->add_new_line(1);
+		}
+
 		/**
 		 * Filters date format.
 		 */
@@ -269,6 +271,16 @@
 		}
 		$printer->add_text_line(__( 'Payment Method: ', 'star-cloudprnt-for-woocommerce-plus' ).$order_meta['_payment_method_title'][0]);
 		$printer->add_new_line(1);
+
+		/**
+		 * Filters after method.
+		 */
+		$after_method = apply_filters( 'scfwp_print_order_summary_after_method', '', $order_id, $order);
+		if ($after_method){
+			star_cloudprnt_add_text_line($after_method, $printer);
+			$printer->add_new_line(1);
+		}
+
 		$printer->add_text_line(star_cloudprnt_get_column_separated_data(array(__( 'ITEM', 'star-cloudprnt-for-woocommerce-plus' ), __( 'TOTAL', 'star-cloudprnt-for-woocommerce-plus' )), $selectedPrinter['columns']));
 		$printer->add_text_line(star_cloudprnt_get_seperator($selectedPrinter['columns']));
 
@@ -295,13 +307,41 @@
 		$printer->add_text_line(__( 'All prices are inclusive of tax (if applicable).', 'star-cloudprnt-for-woocommerce-plus' ));
 		$printer->add_new_line(1);
 
+		/**
+		 * Filters after items.
+		 */
+		$after_items = apply_filters( 'scfwp_print_order_summary_after_items', '', $order_id, $order);
+		if ($after_items){
+			star_cloudprnt_add_text_line($after_items, $printer);
+			$printer->add_new_line(1);
+		}
+
 		star_cloudprnt_create_address($order, $order_meta, $printer);
+
+		/**
+		 * Filters after address.
+		 */
+		$after_address = apply_filters( 'scfwp_print_order_summary_after_address', '', $order_id, $order);
+		if ($after_address){
+			star_cloudprnt_add_text_line($after_address, $printer);
+			$printer->add_new_line(1);
+		}
 
 		$printer->add_new_line(1);
 		$printer->set_text_emphasized();
 		$printer->add_text_line(__( 'Customer Provided Notes:', 'star-cloudprnt-for-woocommerce-plus' ));
 		$printer->cancel_text_emphasized();
 		$printer->add_text_line(empty($order->post->post_excerpt) ? __( 'None', 'star-cloudprnt-for-woocommerce-plus' ) : $order->post->post_excerpt);
+
+		/**
+		 * Filters after notes.
+		 */
+		$after_notes = apply_filters( 'scfwp_print_order_summary_after_notes', '', $order_id, $order);
+		if ($after_notes){
+			star_cloudprnt_add_text_line($after_notes, $printer);
+			$printer->add_new_line(1);
+		}
+
 		if (get_option('star-cloudprnt-print-logo-bottom-input')) $printer->add_nv_logo(esc_attr(get_option('star-cloudprnt-print-logo-bottom-input')));
 
 		$printer->printjob();
@@ -381,6 +421,16 @@
 		if (selected(get_option('star-cloudprnt-select'), "enable", false) !== "" && star_cloudprnt_is_woo_activated())
 		{
 			add_action('woocommerce_thankyou', 'star_cloudprnt_woo_on_thankyou', 1, 1);
+		}
+	}
+
+	function star_cloudprnt_add_text_line($text, &$printer)
+	{
+		if ( $text ) {
+			$exploded = explode( "\n", $text );
+			foreach ( $exploded as $line ) {
+				$printer->add_text_line( $line );
+			}
 		}
 	}
 ?>
