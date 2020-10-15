@@ -219,7 +219,8 @@
 		$printer->cancel_text_emphasized();
 		$printer->set_font_magnification(1, 1);
 		$printer->add_new_line(1);
-		$printer->add_text_line(star_cloudprnt_get_column_separated_data(array(__( 'Order #', 'star-cloudprnt-for-woocommerce-plus' ).$order_id, date("d-m-y H:i:s", time())), $selectedPrinter['columns']));
+		$date_format = apply_filters( 'scfwp_print_order_summary_date_format', 'd-m-y H:i:s' );
+		$printer->add_text_line(star_cloudprnt_get_column_separated_data(array(__( 'Order #', 'star-cloudprnt-for-woocommerce-plus' ).$order_id, date_i18n($date_format, time())), $selectedPrinter['columns']));
 		$printer->add_new_line(1);
 		$printer->add_text_line(__( 'Order Status: ', 'star-cloudprnt-for-woocommerce-plus' ).star_cloudprnt_parse_order_status($order->post->post_status));
 		$printer->add_text_line(__( 'Order Date: ', 'star-cloudprnt-for-woocommerce-plus' ).$order->order_date);
