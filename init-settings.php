@@ -23,10 +23,10 @@ class init {
 	 * Load translated strings.
 	 */
 	public function set_locale() {
-		$return = load_plugin_textdomain(
+		load_plugin_textdomain(
 			'star-cloudprnt-for-woocommerce-plus',
 			false,
-			basename( dirname( __DIR__ ) ) . '/languages'
+			basename( dirname( __FILE__ ) ) . '/languages'
 		);
 	}
 }

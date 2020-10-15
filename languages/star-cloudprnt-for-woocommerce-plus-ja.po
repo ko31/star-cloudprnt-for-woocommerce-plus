@@ -1,0 +1,135 @@
+# Copyright (C) 2020 ko31
+# This file is distributed under the same license as the Star CloudPRNT for WooCommerce Plus package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Star CloudPRNT for WooCommerce Plus 0.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/star-cloudprnt-"
+"for-woocommerce-plus\n"
+"POT-Creation-Date: 2020-10-15 01:37:51+00:00\n"
+"PO-Revision-Date: 2020-10-15 10:58+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: create-settings.php:71
+msgid "1252"
+msgstr "1252"
+
+#: create-settings.php:11
+msgid "CloudPRNT Setup"
+msgstr "CloudPRNT セットアップ"
+
+#: create-settings.php:12
+msgid "CloudPRNT"
+msgstr "CloudPRNT"
+
+#: create-settings.php:13
+msgid "Selected Printer"
+msgstr "選択されたプリンター"
+
+#: create-settings.php:15
+msgid "Text Encoding"
+msgstr "テキストエンコーディング"
+
+#: create-settings.php:17
+msgid "Printer Logo Settings"
+msgstr "プリンターロゴ設定"
+
+#: create-settings.php:18
+msgid "Print Logo (Top of Receipt)"
+msgstr "ロゴを印刷 (レシートの上部)"
+
+#: create-settings.php:20
+msgid "Top Logo Key Code"
+msgstr "上部ロゴのキーコード"
+
+#: create-settings.php:22
+msgid "Print Logo (Bottom of Receipt)"
+msgstr "ロゴを印刷 (レシートの下部)"
+
+#: create-settings.php:24
+msgid "Bottom Logo Key Code"
+msgstr "下部ロゴのキーコード"
+
+#: create-settings.php:40
+#, fuzzy
+#| msgid "Star CloudPRNT for WooCommerce Settings"
+msgid "Star CloudPRNT for WooCommerce"
+msgstr "Star CloudPRNT for WooCommerce 設定"
+
+#: create-settings.php:45
+msgid "Set your printer \"Server URL\" to:"
+msgstr "プリンターの “Server URL” に設定:"
+
+#: create-settings.php:53
+msgid "DISABLE"
+msgstr "使用不可"
+
+#: create-settings.php:54
+msgid "ENABLE"
+msgstr "使用可"
+
+#: create-settings.php:62
+msgid ""
+"Logos should be writtent to printer FlashROM memory, using a suitable tool, "
+"such as the StarPRNT Software for Windows, which can be downloaded from the "
+"<a href=\"http://starmicronics.com/support/Default.aspx\">Star global "
+"downlad site</a>."
+msgstr ""
+"ロゴは <a href=“http://starmicronics.com/support/Default.aspx”>Star グローバ"
+"ルダウンロードサイト</a>からダウンロードできる Windows 用の StarPRNT ソフト"
+"ウェアなどの適切なツールを使用して、プリンタの FlashROM メモリに書き込む必要"
+"があります."
+
+#: create-settings.php:70
+msgid "UTF-8"
+msgstr "UTF-8"
+
+#: create-settings.php:72
+msgid "UTF-8 mode is recommended for mC-Print or TSP650II printer models."
+msgstr ""
+" mC-Print または TSP650II プリンタモデルでは、UTF-8 モードを推奨します."
+
+#: create-settings.php:145
+msgid "Star CloudPRNT for WooCommerce Settings"
+msgstr "Star CloudPRNT for WooCommerce 設定"
+
+#: create-settings.php:159
+msgid "Error: WooCommerce plugin is not activated."
+msgstr "エラー: WooCommerce プラグインが有効化されていません."
+
+#. Plugin Name of the plugin/theme
+msgid "Star CloudPRNT for WooCommerce Plus"
+msgstr "Star CloudPRNT for WooCommerce Plus"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ko31/star-cloudprnt-for-woocommerce-plus"
+msgstr "https://github.com/ko31/star-cloudprnt-for-woocommerce-plus"
+
+#. Description of the plugin/theme
+msgid ""
+"Star CloudPRNT for WooCommerce enables cloud printing technology with your "
+"Star Receipt printer."
+msgstr ""
+"Star CloudPRNT for WooCommerceは、Star レシートプリンターでクラウド印刷技術"
+"を実現します."
+
+#. Author of the plugin/theme
+msgid "ko31"
+msgstr "ko31"
+
+#. Author URI of the plugin/theme
+msgid "https://go-sign.info/"
+msgstr "https://go-sign.info/"
