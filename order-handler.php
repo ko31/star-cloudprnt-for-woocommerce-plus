@@ -179,12 +179,21 @@
 			$printer->cancel_text_emphasized();
 		}
 
-		$printer->add_text_line($fname." ".$lname);
-		$printer->add_text_line($a1);
-		if ($a2 != '') $printer->add_text_line($a2);
-		if ($city != '') $printer->add_text_line($city);
-		if ($state != '') $printer->add_text_line($state);
-		if ($postcode != '') $printer->add_text_line($postcode);
+		$overwrite_address = apply_filters( 'scfwp_print_order_summary_overwrite_address', '', $order, $order_meta );
+		if ($overwrite_address){
+			$exploded = explode("\n", $overwrite_address);
+			foreach($exploded as $address)
+			{
+				$printer->add_text_line($address);
+			}
+		} else {
+			$printer->add_text_line($fname." ".$lname);
+			$printer->add_text_line($a1);
+			if ($a2 != '') $printer->add_text_line($a2);
+			if ($city != '') $printer->add_text_line($city);
+			if ($state != '') $printer->add_text_line($state);
+			if ($postcode != '') $printer->add_text_line($postcode);
+		}
 		$printer->add_text_line(__( 'Tel: ', 'star-cloudprnt-for-woocommerce-plus' ).$tel);
 	}
 
