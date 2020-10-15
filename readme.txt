@@ -1,12 +1,4 @@
 === Star CloudPRNT for WooCommerce Plus ===
-Contributors: ko31
-Tags: star, printing, printers, automated, e-commerce, store, sales, downloadable, downloads, woocommerce, restaurant, order, receipt
-Requires at least: 4.7.0
-Tested up to: 5.4.0
-Requires PHP: 5.6
-Stable tag: 0.9.0
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Star CloudPRNT for WooCommerce enables Cloud printing technology with your Star Receipt printer.
 
@@ -14,7 +6,7 @@ Star CloudPRNT for WooCommerce enables Cloud printing technology with your Star 
 
 This is a plugin that extends [Star CloudPRNT for WooCommerce](https://wordpress.org/plugins/star-cloudprnt-for-woocommerce/)(As of version 1.1.2).
 
-The basic behavior is the same as WooCommerce, with the following added features.
+The basic behavior is the same as Star CloudPRNT for WooCommerce, with the following added features.
 
 * i18n support
   * You can use [Poedit](https://poedit.net/), [Loco Translate](https://wordpress.org/plugins/loco-translate/), etc. for translation.
