@@ -122,8 +122,17 @@
 							+floatval($order->get_item_meta($item_id, "_line_tax", true));
 			$item_price = floatval($item_total_price) / intval($item_qty);
 			$currencyHex = star_cloudprnt_get_codepage_currency_symbol();
+			/**
+			 * Filters number format decimals.
+			 */
 			$number_format_decimals = apply_filters( 'scfwp_print_order_summary_number_format_decimals', 2 );
+			/**
+			 * Filters number format decimal point.
+			 */
 			$number_format_dec_point = apply_filters( 'scfwp_print_order_summary_number_format_dec_point', '.' );
+			/**
+			 * Filters number format thousands separator.
+			 */
 			$number_format_thousands_sep = apply_filters( 'scfwp_print_order_summary_number_format_thousands_sep', '' );
 			$formatted_item_price = number_format($item_price, $number_format_decimals, $number_format_dec_point , $number_format_thousands_sep);
 			$formatted_total_price = number_format($item_total_price, $number_format_decimals, $number_format_dec_point, $number_format_thousands_sep);
@@ -146,6 +155,17 @@
 			$printer->add_text_line(star_cloudprnt_get_column_separated_data(array(__( ' Qty: ', 'star-cloudprnt-for-woocommerce-plus' ).
 						$item_qty.__( ' x Cost: ', 'star-cloudprnt-for-woocommerce-plus' ).$currencyHex.$formatted_item_price,
 						$currencyHex.$formatted_total_price), $max_chars));
+			/**
+			 * Filters item appendix.
+			 */
+			$item_appendix = apply_filters( 'scfwp_print_order_summary_item_appendix', '', $order, $item_id, $item_data );
+			if ($item_appendix){
+				$exploded = explode("\n", $item_appendix);
+				foreach($exploded as $appendix)
+				{
+					$printer->add_text_line($appendix);
+				}
+			}
 		}
 	}
 
@@ -179,6 +199,9 @@
 			$printer->cancel_text_emphasized();
 		}
 
+		/**
+		 * Filters for overwriting address.
+		 */
 		$overwrite_address = apply_filters( 'scfwp_print_order_summary_overwrite_address', '', $order, $order_meta );
 		if ($overwrite_address){
 			$exploded = explode("\n", $overwrite_address);
@@ -231,6 +254,9 @@
 		$printer->cancel_text_emphasized();
 		$printer->set_font_magnification(1, 1);
 		$printer->add_new_line(1);
+		/**
+		 * Filters date format.
+		 */
 		$date_format = apply_filters( 'scfwp_print_order_summary_date_format', 'd-m-y H:i:s' );
 		$printer->add_text_line(star_cloudprnt_get_column_separated_data(array(__( 'Order #', 'star-cloudprnt-for-woocommerce-plus' ).$order_id, date_i18n($date_format, time())), $selectedPrinter['columns']));
 		$printer->add_new_line(1);
@@ -250,8 +276,17 @@
 
 		$printer->add_new_line(1);
 		$printer->set_text_right_align();
+		/**
+		 * Filters number format decimals.
+		 */
 		$number_format_decimals = apply_filters( 'scfwp_print_order_summary_number_format_decimals', 2 );
+		/**
+		 * Filters number format decimal point.
+		 */
 		$number_format_dec_point = apply_filters( 'scfwp_print_order_summary_number_format_dec_point', '.' );
+		/**
+		 * Filters number format thousands separator.
+		 */
 		$number_format_thousands_sep = apply_filters( 'scfwp_print_order_summary_number_format_thousands_sep', '' );
 		$formatted_overall_total_price = number_format($order_meta['_order_total'][0], $number_format_decimals, $number_format_dec_point, $number_format_thousands_sep);
 		$printer->add_text_line(__( 'TOTAL     ', 'star-cloudprnt-for-woocommerce-plus' ).star_cloudprnt_get_codepage_currency_symbol().$formatted_overall_total_price);
