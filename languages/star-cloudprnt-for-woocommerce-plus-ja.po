@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Star CloudPRNT for WooCommerce Plus 0.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/star-cloudprnt-"
 "for-woocommerce-plus\n"
-"POT-Creation-Date: 2020-10-15 03:52:42+00:00\n"
-"PO-Revision-Date: 2020-10-15 12:53+0900\n"
+"POT-Creation-Date: 2020-10-15 04:12:58+00:00\n"
+"PO-Revision-Date: 2020-10-15 13:13+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -214,11 +214,11 @@ msgstr "合計     "
 msgid "All prices are inclusive of tax (if applicable)."
 msgstr "価格はすべて税込価格です（該当する場合）。"
 
-#: order-handler.php:332
+#: order-handler.php:333
 msgid "Customer Provided Notes:"
 msgstr "お客様からのメモ:"
 
-#: order-handler.php:334
+#: order-handler.php:335
 msgid "None"
 msgstr "なし"
 
