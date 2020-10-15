@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Star CloudPRNT for WooCommerce Plus 0.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/star-cloudprnt-"
 "for-woocommerce-plus\n"
-"POT-Creation-Date: 2020-10-15 03:17:59+00:00\n"
-"PO-Revision-Date: 2020-10-15 12:18+0900\n"
+"POT-Creation-Date: 2020-10-15 03:52:42+00:00\n"
+"PO-Revision-Date: 2020-10-15 12:53+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -142,83 +142,83 @@ msgstr "払い戻し"
 msgid "Failed"
 msgstr "失敗"
 
-#: order-handler.php:132
+#: order-handler.php:141
 msgid " - ID: "
 msgstr " - ID: "
 
-#: order-handler.php:146
+#: order-handler.php:155
 msgid " Qty: "
 msgstr " 数量: "
 
-#: order-handler.php:147
+#: order-handler.php:156
 msgid " x Cost: "
 msgstr " x 価格: "
 
-#: order-handler.php:166
+#: order-handler.php:182
 msgid "Billing Address:"
 msgstr "請求先住所:"
 
-#: order-handler.php:178
+#: order-handler.php:194
 msgid "Shipping Address:"
 msgstr "配送先住所:"
 
-#: order-handler.php:188
+#: order-handler.php:212
 msgid "Tel: "
 msgstr "電話番号: "
 
-#: order-handler.php:216
+#: order-handler.php:240
 msgid "ORDER"
 msgstr "注文"
 
-#: order-handler.php:217
+#: order-handler.php:241
 msgid "NOTIFICATION"
 msgstr "通知"
 
-#: order-handler.php:219
+#: order-handler.php:243
 msgid "ORDER NOTIFICATION"
 msgstr "注文通知"
 
-#: order-handler.php:226
+#: order-handler.php:263
 msgid "Order #"
 msgstr "注文番号 #"
 
-#: order-handler.php:228
+#: order-handler.php:265
 msgid "Order Status: "
 msgstr "注文ステータス: "
 
-#: order-handler.php:229
+#: order-handler.php:266
 msgid "Order Date: "
 msgstr "注文日: "
 
-#: order-handler.php:233
+#: order-handler.php:270
 msgid "Shipping Method: "
 msgstr "配送方法: "
 
-#: order-handler.php:235
+#: order-handler.php:272
 msgid "Payment Method: "
 msgstr "支払方法: "
 
-#: order-handler.php:237
+#: order-handler.php:284
 msgid "ITEM"
 msgstr "商品"
 
-#: order-handler.php:237
+#: order-handler.php:284
 msgid "TOTAL"
 msgstr "合計"
 
-#: order-handler.php:248
+#: order-handler.php:304
 msgid "TOTAL     "
 msgstr "合計     "
 
-#: order-handler.php:251
+#: order-handler.php:307
 msgid "All prices are inclusive of tax (if applicable)."
 msgstr "価格はすべて税込価格です（該当する場合）。"
 
-#: order-handler.php:258
+#: order-handler.php:332
 msgid "Customer Provided Notes:"
 msgstr "お客様からのメモ:"
 
-#: order-handler.php:260
+#: order-handler.php:334
 msgid "None"
 msgstr "なし"
 
