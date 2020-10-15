@@ -33,7 +33,7 @@ module.exports = function( grunt ) {
 					domainPath: '/languages',
 					exclude: [ '\.git/*', 'bin/*', 'node_modules/*', 'tests/*' ],
 					mainFile: 'star-cloudprnt-for-woocommerce.php',
-					potFilename: 'star-cloudprnt-for-woocommerce.pot',
+					potFilename: 'star-cloudprnt-for-woocommerce-plus.pot',
 					potHeaders: {
 						poedit: true,
 						'x-poedit-keywordslist': true

@@ -8,6 +8,8 @@
 	 * Author URI: https://go-sign.info/
 	 * Requires at least: 4.7.0
 	 * Tested up to: 5.4.0
+	 * Text Domain:     star-cloudprnt-for-woocommerce-plus
+	 * Domain Path:     /languages
 	 */
 
 	// Block direct access to this script
@@ -19,6 +21,9 @@
 	include_once(plugin_dir_path(__FILE__).star_cloudprnt_get_os_path('cloudprnt/printer_star_line.inc.php'));
 	include_once(plugin_dir_path(__FILE__).star_cloudprnt_get_os_path('cloudprnt/printer_text_plain.inc.php'));
 	include_once(plugin_dir_path(__FILE__).star_cloudprnt_get_os_path('cloudprnt/printer_star_prnt.inc.php'));
+
+	// Include plugin initial settings
+	include_once(plugin_dir_path(__FILE__).star_cloudprnt_get_os_path('init-settings.php'));
 
 	// Include plugin page settings and woo commerce hooks
 	include_once(plugin_dir_path(__FILE__).star_cloudprnt_get_os_path('create-settings.php'));
