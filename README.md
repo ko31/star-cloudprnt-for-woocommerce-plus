@@ -42,9 +42,9 @@ https://www.youtube.com/watch?v=2O3pZJ-kfqk
 
 
 ## Frequently Asked Questions ##
- 
+
 ### Which printer models are supported? ###
- 
+
 Supported printer models are:
 
 * Star TSP650II with HIX interface
@@ -59,7 +59,7 @@ Supported printer models are:
 Yes, you can enable UTF-8 text encoding if you have a compatible printer model to resolve typical language specific character issues.
 Please use the plugin settings page to enable UTB-8 mode.
 
-Models with UTF-8 support are the TSP650II, mC-Print3 and mC-Print2. 
+Models with UTF-8 support are the TSP650II, mC-Print3 and mC-Print2.
 These printers cover most Latin, Cyrilic, Greek and CJK characters, although not all characters can be supported by all device models and for TSP654II a firmware update may be required. Please talk with Star for advice if necessary.
 
 ### Can I modify the print job design/layout? ###

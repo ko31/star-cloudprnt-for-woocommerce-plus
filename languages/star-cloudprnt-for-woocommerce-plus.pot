@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Star CloudPRNT for WooCommerce Plus 0.9.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/star-cloudprnt-for-woocommerce-plus\n"
-"POT-Creation-Date: 2020-10-15 01:37:51+00:00\n"
+"POT-Creation-Date: 2020-10-15 02:42:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,12 +97,116 @@ msgstr ""
 msgid "UTF-8 mode is recommended for mC-Print or TSP650II printer models."
 msgstr ""
 
+#: create-settings.php:79
+msgid "No printer found"
+msgstr ""
+
 #: create-settings.php:145
 msgid "Star CloudPRNT for WooCommerce Settings"
 msgstr ""
 
 #: create-settings.php:159
 msgid "Error: WooCommerce plugin is not activated."
+msgstr ""
+
+#: order-handler.php:44
+msgid "Pending Payment"
+msgstr ""
+
+#: order-handler.php:45
+msgid "Processing"
+msgstr ""
+
+#: order-handler.php:46
+msgid "On Hold"
+msgstr ""
+
+#: order-handler.php:47
+msgid "Completed"
+msgstr ""
+
+#: order-handler.php:48
+msgid "Cancelled"
+msgstr ""
+
+#: order-handler.php:49
+msgid "Refunded"
+msgstr ""
+
+#: order-handler.php:50
+msgid "Failed"
+msgstr ""
+
+#: order-handler.php:129
+msgid " - ID: "
+msgstr ""
+
+#: order-handler.php:143
+msgid " Qty: "
+msgstr ""
+
+#: order-handler.php:144
+msgid " x Cost: "
+msgstr ""
+
+#: order-handler.php:175
+msgid "Shipping Address:"
+msgstr ""
+
+#: order-handler.php:185
+msgid "Tel: "
+msgstr ""
+
+#: order-handler.php:213
+msgid "ORDER"
+msgstr ""
+
+#: order-handler.php:214
+msgid "NOTIFICATION"
+msgstr ""
+
+#: order-handler.php:216
+msgid "ORDER NOTIFICATION"
+msgstr ""
+
+#: order-handler.php:222
+msgid "Order #"
+msgstr ""
+
+#: order-handler.php:224
+msgid "Order Status: "
+msgstr ""
+
+#: order-handler.php:225
+msgid "Order Date: "
+msgstr ""
+
+#: order-handler.php:229
+msgid "Shipping Method: "
+msgstr ""
+
+#: order-handler.php:231
+msgid "Payment Method: "
+msgstr ""
+
+#: order-handler.php:233
+msgid "ITEM"
+msgstr ""
+
+#: order-handler.php:233
+msgid "TOTAL"
+msgstr ""
+
+#: order-handler.php:241
+msgid "TOTAL     "
+msgstr ""
+
+#: order-handler.php:244
+msgid "All prices are inclusive of tax (if applicable)."
+msgstr ""
+
+#: order-handler.php:251
+msgid "Customer Provided Notes:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
