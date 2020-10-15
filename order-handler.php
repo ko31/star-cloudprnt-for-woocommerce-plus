@@ -323,6 +323,7 @@
 		 */
 		$after_address = apply_filters( 'scfwp_print_order_summary_after_address', '', $order_id, $order);
 		if ($after_address){
+			$printer->add_new_line(1);
 			star_cloudprnt_add_text_line($after_address, $printer);
 			$printer->add_new_line(1);
 		}
@@ -338,6 +339,7 @@
 		 */
 		$after_notes = apply_filters( 'scfwp_print_order_summary_after_notes', '', $order_id, $order);
 		if ($after_notes){
+			$printer->add_new_line(1);
 			star_cloudprnt_add_text_line($after_notes, $printer);
 			$printer->add_new_line(1);
 		}
