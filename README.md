@@ -1,22 +1,22 @@
-=== Star CloudPRNT for WooCommerce ===
-Contributors: fmahmood, lawrenceowen
-Tags: star, printing, printers, automated, e-commerce, store, sales, downloadable, downloads, woocommerce, restaurant, order, receipt
-Requires at least: 4.7.0
-Tested up to: 5.4.0
-Requires PHP: 5.6
-Stable tag: 1.1.2
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+# Star CloudPRNT for WooCommerce #
+**Contributors:** [fmahmood](https://profiles.wordpress.org/fmahmood), [lawrenceowen](https://profiles.wordpress.org/lawrenceowen)  
+**Tags:** star, printing, printers, automated, e-commerce, store, sales, downloadable, downloads, woocommerce, restaurant, order, receipt  
+**Requires at least:** 4.7.0  
+**Tested up to:** 5.4.0  
+**Requires PHP:** 5.6  
+**Stable tag:** 1.1.2  
+**License:** GPLv3  
+**License URI:** https://www.gnu.org/licenses/gpl-3.0.html  
 
 Star CloudPRNT for WooCommerce enables Cloud printing technology with your Star Receipt printer.
 
-== Description ==
+## Description ##
 Star CloudPRNT for WooCommerce will enable you to print automated receipts each time a customer places an order on your WooCommerce based eCommerce website.
 This can be used to quickly create a remote order/receipt printing solution for restaurants, take-aways, bakeries and similar sites, with minimal set-up time or cost.
 
 This plugin can only be used alongside the WooCommerce WordPress plugin.  For more information on the WooCommerce plugin please visit www.woocommerce.com
 
-== Installation ==
+## Installation ##
 1. Install and activate the plugin.
 2. Go to your WordPress admin control panel and you should notice a new link for "Star CloudPRNT for WooCommerce" under your WordPress "Settings" category.
 3. Once you have opened up the Star CloudPRNT settings page, you will be given a unique Server URL which you need to copy.
@@ -30,10 +30,10 @@ This plugin can only be used alongside the WooCommerce WordPress plugin.  For mo
 
 For help and support please e-mail support@star-emea.com
 
-= Video Installation Guide =
+### Video Installation Guide ###
 https://www.youtube.com/watch?v=2O3pZJ-kfqk
 
-= Minimum Requirements =
+### Minimum Requirements ###
 * PHP 5.6 or greater.
 * WordPress 4.7.X, 4.8.X, 4.9.X, 5.0.x, 5.1.x, 5.3.x or 5.4.x.
 * WooCommerce plugin 2.5.X, 2.6.X, 3.0.X or 4.0.X.
@@ -41,10 +41,10 @@ https://www.youtube.com/watch?v=2O3pZJ-kfqk
 * Star mC-Print3 or mC-Print2 series printer
 
 
-== Frequently Asked Questions ==
-
-= Which printer models are supported? =
-
+## Frequently Asked Questions ##
+ 
+### Which printer models are supported? ###
+ 
 Supported printer models are:
 
 * Star TSP650II with HIX interface
@@ -54,36 +54,36 @@ Supported printer models are:
 * Star TSP800II with HIX interface (currently limited to 80mm paper width support)
 * Star SP700 with HIX interface
 
-= Can I print my local language characters? =
+### Can I print my local language characters? ###
 
 Yes, you can enable UTF-8 text encoding if you have a compatible printer model to resolve typical language specific character issues.
 Please use the plugin settings page to enable UTB-8 mode.
 
-Models with UTF-8 support are the TSP650II, mC-Print3 and mC-Print2.
+Models with UTF-8 support are the TSP650II, mC-Print3 and mC-Print2. 
 These printers cover most Latin, Cyrilic, Greek and CJK characters, although not all characters can be supported by all device models and for TSP654II a firmware update may be required. Please talk with Star for advice if necessary.
 
-= Can I modify the print job design/layout? =
+### Can I modify the print job design/layout? ###
 
 At this time, modifying the print job layout is possible only by directly editing the plugin PHP source code. This is entirely permitted by the GPLv3 license terms.
 Your local Star Micronics support contact may be able to offer some assistance.
 
-= How can I add an image to the top or end of my print? =
+### How can I add an image to the top or end of my print? ###
 
 Images must be pre-stored inside the printer FlashROM memory in order to be printed bu this plugin. Once stored, they will have logo number/id, which can be input into the "Printer Logo Settings" settings area to enable top and/or bottom logo printing.
 Storing images inside the Print FlashROM is possible with a software utility provided by Star Micronics, included with the standard indows driver package. These can be downloaded from the Star Micronics web site.
 
-== Screenshots ==
+## Screenshots ##
 1. Star CloudPRNT settings page.
 2. Printer management page.
 
-== Upgrade Notice ==
+## Upgrade Notice ##
 
-= 1.1.0 =
+### 1.1.0 ###
 * Add Support for Star mC-Print3 and mC-Print2 printer ranges
 * Add support for UTF-8 text encoding
 * Enable text magnification.
 
-== Changelog ==
+## Changelog ##
 1.1.2 - 2020-04-14
 - Work around an issue that prevents printing to thermal printer models with HIX Connect interface that has earlier firmware. In this situation, the plugin will now follow the same logic as 1.0.x plugin releases.
 

@@ -1,0 +1,16 @@
+{
+  "name": "star-cloudprnt-for-woocommerce-plus",
+  "version": "0.9.0",
+  "main": "Gruntfile.js",
+  "author": "ko31",
+  "scripts": {
+    "start": "grunt default",
+    "readme": "grunt readme",
+    "i18n": "grunt i18n"
+  },
+  "devDependencies": {
+    "grunt": "^1.2.1",
+    "grunt-wp-i18n": "^1.0.3",
+    "grunt-wp-readme-to-markdown": "~2.0.1"
+  }
+}
