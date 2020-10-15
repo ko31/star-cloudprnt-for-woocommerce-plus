@@ -1,0 +1,15 @@
+# OS or Editor
+.DS_Store
+Thumbs.db
+*.swo
+*.swp
+*~
+.idea
+
+# npm packages
+node_modules/
+package-lock.json
+
+# composer packages
+vendor/
+composer.lock
