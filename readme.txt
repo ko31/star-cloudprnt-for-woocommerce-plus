@@ -122,3 +122,12 @@ Filters to be added after notes.
 - @param int $order_id
 - @param \WC_Order $order
 - @return string - the text to add
+
+= scfwp_print_order_currency_symbol =
+
+Filters currency symbol.
+
+- @param string Sets the currency symbol. '' by default.
+- @return string $encoding
+- @return string $symbol
+- @return string - the currency symbol
