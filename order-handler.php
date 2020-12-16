@@ -56,18 +56,29 @@
 		$encoding = get_option('star-cloudprnt-printer-encoding-select');
 		$symbol = get_woocommerce_currency_symbol();
 
+		/**
+		 * Filters currency symbol.
+		 */
+		$currency_symbol = apply_filters( 'scfwp_print_order_currency_symbol', '', $encoding, $symbol );
+		if ( $currency_symbol ) {
+			return $currency_symbol;
+		}
+
 		if ($encoding === "UTF-8") {
 			if ($symbol === "&pound;") return "�"; // � pound
 			else if ($symbol === "&#36;") return "$"; // $ dollar
 			else if ($symbol === "&euro;") return "�"; // � euro
+			else if ($symbol === "&yen;") return "¥"; // ¥ yen
 		} elseif ($encoding == "1252"){
 			if ($symbol === "&pound;") return "\xA3"; // � pound
 			else if ($symbol === "&#36;") return "\x24"; // $ dollar
 			else if ($symbol === "&euro;") return "\x80"; // � euro
+			else if ($symbol === "&yen;") return "\xA5"; // ¥ yen
 		} else {
 			if ($symbol === "&pound;") return "GBP"; // � pound
 			else if ($symbol === "&#36;") return ""; // $ dollar
 			else if ($symbol === "&euro;") return "EUR"; // � euro
+			else if ($symbol === "&yen;") return "YEN"; // ¥ yen
 		}
 
 		return ""; // return blank by default
