@@ -148,8 +148,12 @@
 			$formatted_item_price = number_format($item_price, $number_format_decimals, $number_format_dec_point , $number_format_thousands_sep);
 			$formatted_total_price = number_format($item_total_price, $number_format_decimals, $number_format_dec_point, $number_format_thousands_sep);
 
+			/**
+			 * Filters item prefix character.
+			 */
+			$item_prefix_character = apply_filters( 'scfwp_print_order_summary_item_prefix_character', '' );
 			$printer->set_text_emphasized();
-			$printer->add_text_line(str_replace('&ndash;', '-', $product_name).__( ' - ID: ', 'star-cloudprnt-for-woocommerce-plus' ).$product_id."");
+			$printer->add_text_line($item_prefix_character.str_replace('&ndash;', '-', $product_name).__( ' - ID: ', 'star-cloudprnt-for-woocommerce-plus' ).$product_id."");
 			$printer->cancel_text_emphasized();
 
 			if ($variation_id != 0)
