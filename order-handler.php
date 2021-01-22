@@ -175,7 +175,7 @@
 			 */
 			$item_appendix = apply_filters( 'scfwp_print_order_summary_item_appendix', '', $order, $item_id, $item_data );
 			if ($item_appendix){
-				star_cloudprnt_add_text_line($item_appendix, $printer);
+				star_cloudprnt_add_text_line($item_appendix, $printer, $max_chars);
 			}
 		}
 	}
@@ -215,7 +215,7 @@
 		 */
 		$overwrite_address = apply_filters( 'scfwp_print_order_summary_overwrite_address', '', $order, $order_meta );
 		if ($overwrite_address){
-			star_cloudprnt_add_text_line($overwrite_address, $printer);
+			star_cloudprnt_add_text_line($overwrite_address, $printer, $max_chars);
 		} else {
 			$printer->add_text_line($fname." ".$lname);
 			$printer->add_text_line($a1);
@@ -267,7 +267,7 @@
 		 */
 		$after_title = apply_filters( 'scfwp_print_order_summary_after_title', '', $order_id, $order);
 		if ($after_title){
-			star_cloudprnt_add_text_line($after_title, $printer);
+			star_cloudprnt_add_text_line($after_title, $printer, $selectedPrinter['columns']);
 			$printer->add_new_line(1);
 		}
 
@@ -292,7 +292,7 @@
 		 */
 		$after_method = apply_filters( 'scfwp_print_order_summary_after_method', '', $order_id, $order);
 		if ($after_method){
-			star_cloudprnt_add_text_line($after_method, $printer);
+			star_cloudprnt_add_text_line($after_method, $printer, $selectedPrinter['columns']);
 			$printer->add_new_line(1);
 		}
 
@@ -327,7 +327,7 @@
 		 */
 		$after_items = apply_filters( 'scfwp_print_order_summary_after_items', '', $order_id, $order);
 		if ($after_items){
-			star_cloudprnt_add_text_line($after_items, $printer);
+			star_cloudprnt_add_text_line($after_items, $printer, $selectedPrinter['columns']);
 			$printer->add_new_line(1);
 		}
 
@@ -339,7 +339,7 @@
 		$after_address = apply_filters( 'scfwp_print_order_summary_after_address', '', $order_id, $order);
 		if ($after_address){
 			$printer->add_new_line(1);
-			star_cloudprnt_add_text_line($after_address, $printer);
+			star_cloudprnt_add_text_line($after_address, $printer, $selectedPrinter['columns']);
 			$printer->add_new_line(1);
 		}
 
@@ -355,7 +355,7 @@
 		$after_notes = apply_filters( 'scfwp_print_order_summary_after_notes', '', $order_id, $order);
 		if ($after_notes){
 			$printer->add_new_line(1);
-			star_cloudprnt_add_text_line($after_notes, $printer);
+			star_cloudprnt_add_text_line($after_notes, $printer, $selectedPrinter['columns']);
 			$printer->add_new_line(1);
 		}
 
@@ -441,12 +441,70 @@
 		}
 	}
 
-	function star_cloudprnt_add_text_line($text, &$printer)
+	function star_cloudprnt_add_text_line($text, &$printer, $max_chars)
 	{
-		if ( $text ) {
+		if ( is_string( $text ) ) {
 			$exploded = explode( "\n", $text );
 			foreach ( $exploded as $line ) {
 				$printer->add_text_line( $line );
+			}
+		} elseif ( is_array( $text ) ) {
+			// You can set array keys as follows:
+			// - 'text' : string
+			// - 'position' : 'left'(default), 'center', 'right'
+			// - 'emphasis' : true, false(default)
+			// - 'magnification' : int(default:1)
+			// - 'seperator' : true(If true, the value of 'seperator_input' will be used as input for the separator), false(default)
+			// - 'seperated_text' : array(Specify the two elements to be placed on the left and right)
+			foreach ( $text as $line ) {
+				// Set position
+				if ( isset( $line['position'] ) ) {
+					if ( $line['position'] === 'left' ) {
+						$printer->set_text_left_align();
+					} elseif ( $line['position'] === 'center' ) {
+						$printer->set_text_center_align();
+					} elseif ( $line['position'] === 'right' ) {
+						$printer->set_text_right_align();
+					}
+				}
+				// Set emphasis
+				if ( isset( $line['emphasis'] ) ) {
+					if ( (bool) $line['emphasis'] ) {
+						$printer->set_text_emphasized();
+					}
+				}
+				// Set magnification
+				if ( isset( $line['magnification'] ) ) {
+					if ( preg_match('/^[1-9]{1}$/', $line['magnification'] ) ) {
+						$printer->set_font_magnification( $line['magnification'], $line['magnification'] );
+					}
+				}
+				// Set seperator
+				if ( isset( $line['seperator'] ) ) {
+					if ( ! empty( $line['seperator_input'] ) ) {
+						$printer->add_text_line( star_cloudprnt_get_seperator( $max_chars, $line['seperator_input'] ) );
+					} else {
+						$printer->add_text_line( star_cloudprnt_get_seperator( $max_chars ) );
+					}
+				}
+				// Set seperated_text
+				if ( isset( $line['seperated_text'] ) ) {
+					if ( is_array( $line['seperated_text'] ) && count( $line['seperated_text'] ) >= 2 ) {
+						$printer->add_text_line( star_cloudprnt_get_column_separated_data( array(
+							$line['seperated_text'][0],
+							$line['seperated_text'][1]
+						), $max_chars ) );
+					}
+				}
+				// Set text
+				if ( isset( $line['text'] ) ) {
+					$printer->add_text_line( $line['text'] );
+				}
+
+				// Reset layout
+				$printer->set_text_left_align();
+				$printer->cancel_text_emphasized();
+				$printer->set_font_magnification(1, 1);
 			}
 		}
 	}
