@@ -56,7 +56,7 @@ Filters number format thousands separator.
 
 Filters to be added after the item.
 
-- @param string Sets the text to add. '' by default.
+- @param string|array Sets the text to add. '' by default.
 - @param \WC_Order $order
 - @param int $item_id
 - @param array $item_data
@@ -66,7 +66,7 @@ Filters to be added after the item.
 
 Filters for overwriting address.
 
-- @param string Sets the overwriting address. '' by default.
+- @param string|array Sets the overwriting address. '' by default.
 - @param \WC_Order $order
 - @param array $order_data
 - @return string - the overwriting address
@@ -75,7 +75,7 @@ Filters for overwriting address.
 
 Filters to be added after title.
 
-- @param string Sets the text to add. '' by default.
+- @param string|array Sets the text to add. '' by default.
 - @param int $order_id
 - @param \WC_Order $order
 - @return string - the text to add
@@ -91,7 +91,7 @@ Filters header date format.
 
 Filters to be added after method.
 
-- @param string Sets the text to add. '' by default.
+- @param string|array Sets the text to add. '' by default.
 - @param int $order_id
 - @param \WC_Order $order
 - @return string - the text to add
@@ -100,7 +100,7 @@ Filters to be added after method.
 
 Filters to be added after items.
 
-- @param string Sets the text to add. '' by default.
+- @param string|array Sets the text to add. '' by default.
 - @param int $order_id
 - @param \WC_Order $order
 - @return string - the text to add
@@ -109,7 +109,7 @@ Filters to be added after items.
 
 Filters to be added after address.
 
-- @param string Sets the text to add. '' by default.
+- @param string|array Sets the text to add. '' by default.
 - @param int $order_id
 - @param \WC_Order $order
 - @return string - the text to add
@@ -118,7 +118,7 @@ Filters to be added after address.
 
 Filters to be added after notes.
 
-- @param string Sets the text to add. '' by default.
+- @param string|array Sets the text to add. '' by default.
 - @param int $order_id
 - @param \WC_Order $order
 - @return string - the text to add
@@ -131,3 +131,10 @@ Filters currency symbol.
 - @return string $encoding
 - @return string $symbol
 - @return string - the currency symbol
+
+= scfwp_print_order_summary_item_prefix_character =
+
+Filters to add characters for item prefix.
+
+- @param string Sets the prefix character. '' by default.
+- @return string - the prefix character
